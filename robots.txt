@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /PHPMailer-master/
 Disallow: /msg.php
-Disallow: /thank-you.html
 
 Sitemap: https://precisionlaserwork.com/sitemap.xml

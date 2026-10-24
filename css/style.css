@@ -38,8 +38,8 @@ Table of contents
     Google font
 ====================================== */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@import url('fonts.css');
+
 
 /* ===================================
     Reset
@@ -3913,7 +3913,7 @@ aside .latest-post li figure {width: 75px;}
 .all-demo {transition-timing-function: ease-in-out; -moz-transition-timing-function: ease-in-out; -webkit-transition-timing-function: ease-in-out; -o-transition-timing-function: ease-in-out; transition-duration: .2s; -moz-transition-duration: .2s; -webkit-transition-duration: .2s; -o-transition-duration: .2s; position:fixed; top:172px; right: -105px; background: #fff; z-index: 1000; -moz-box-shadow:0 0 10px rgba(0,0,0,0.2);-webkit-box-shadow:0 0 10px rgba(0,0,0,0.2);box-shadow:0 0 10px rgba(0,0,0,0.2); z-index: 9999}
 
 .cbh-ph-img-circle1 {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+    background-image: url('../images/whatsapp.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3921,7 +3921,7 @@ aside .latest-post li figure {width: 75px;}
 /* --- FORCE WhatsApp logo on the floating button --- */
 #clbh_phone_div .cbh-ph-img-circle1 {
     /* override sab kuch ek saath */
-    background: #25d366 url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') no-repeat center center / 60% !important;
+    background: #25d366 url('../images/whatsapp.svg') no-repeat center center / 60% !important;
     border-radius: 50% !important;
     z-index: 3 !important;
 }

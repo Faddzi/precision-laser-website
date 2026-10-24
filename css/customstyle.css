@@ -235,11 +235,11 @@ color:#fff;
 	line-height:18px;
 	vertical-align:1px;
 	color:#fff;
-	background:#25d366;
+	background:#0d7a3f;
 }
 .plcs-footer .plcs-wa-tag:hover{
 	color:#fff;
-	background:#1da851;
+	background:#0a6633;
 }
 footer .footer-bottom{
 	font-size:13px;
@@ -305,3 +305,9 @@ body :is(h1, h2, h3):where(.seo-h){
 		padding-right:5px !important;
 	}
 }
+
+/* ---------- Contrast (WCAG AA) ---------- */
+.breadcrumb a.text-medium-gray{color:#6b6b6b}
+.accordion-style2 .tab-tag,.accordion-style2 .tab-tag.font-color-red{color:#ff5a66}
+.bg-black-opacity-light .text-deep-pink{color:#ff7b96}
+footer .footer-bottom a{color:#c0cbd3;text-decoration:underline}
