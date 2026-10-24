@@ -138,6 +138,7 @@ color:#fff;
 .text-banner-large{
 	font-size:40px;
 	font-weight:bold;
+	line-height:1.2;
 }
 
 .font-color-white{
@@ -151,22 +152,12 @@ color:#fff;
 	padding:60px 0;
 }
 
-.video-iframe{
-	position: relative;
-	padding-bottom: 8.25%;
-	padding-top: 12.66%;
-	height: 0;
-	overflow: auto; 
-	-webkit-overflow-scrolling:touch; //<<--- THIS IS THE KEY 
-	border: solid black 1px;	
-}
-
-.video-iframe iframe {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-	 height:100%;
+.video-iframe iframe{
+	display:block;
+	width:100%;
+	height:auto;
+	aspect-ratio:16 / 9;
+	border:0;
 }
 
 .btn.btn-transparent-dark-gray:hover, .btn.btn-transparent-dark-gray:focus{
@@ -179,15 +170,6 @@ color:#fff;
 	}
 	.text-banner-large{
 		font-size:30px;
-	}
-	.video-iframe{
-		position: relative;
-		padding-bottom: 8.25%;
-		padding-top: 45.66%;
-		height: 0;
-		overflow: auto; 
-		-webkit-overflow-scrolling:touch; //<<--- THIS IS THE KEY 
-		border: solid black 1px;	
 	}
 }
 
@@ -270,5 +252,56 @@ footer .footer-bottom{
 	.plcs-footer-contact{
 		display:inline-block;
 		text-align:left;
+	}
+}
+
+/* ---------- SEO headings ----------
+   Spans/strongs were promoted to h1-h3 for search engines. This resets the
+   theme's tag-level heading sizes (body + tag beats a bare tag selector but
+   loses to any class), so each heading keeps its original look. */
+body :is(h1, h2, h3):where(.seo-h){
+	margin:0;
+	font-size:inherit;
+	line-height:inherit;
+	font-weight:inherit;
+	letter-spacing:inherit;
+}
+
+/* ---------- Mobile ---------- */
+@media only screen and (max-width:767px){
+	.plcs-footer-links li{
+		padding:7px 0;
+	}
+	.plcs-footer-contact li{
+		margin-bottom:18px;
+	}
+	.portfolio-filter-tab-1 li{
+		margin:4px 8px;
+	}
+	.portfolio-filter-tab-1 li a{
+		display:inline-block;
+		padding:8px 4px;
+	}
+}
+@media only screen and (max-width:575px){
+	p{
+		font-size:15px;
+		line-height:26px;
+	}
+	/* Hero titles: the slider shrink-wraps them to ~120px on phones, which
+	   put one word per line. Give them a sensible width to wrap in. */
+	.rev_slider .NotGeneric-SubTitle{
+		min-width:330px !important;
+		white-space:normal !important;
+	}
+	/* Two-column gallery grids instead of one long column */
+	/* !important: the theme's metro-grid rules use very long selectors */
+	ul.portfolio-grid.work-3col li,
+	ul.portfolio-grid.work-4col li{
+		width:50% !important;
+	}
+	ul.portfolio-grid.gutter-medium li{
+		padding-left:5px !important;
+		padding-right:5px !important;
 	}
 }
