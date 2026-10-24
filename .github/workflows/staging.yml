@@ -1,0 +1,40 @@
+name: Deploy staging site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Keep the staging copy out of search results so it never competes
+      # with the live site. The source files stay untouched.
+      - name: Add noindex to staging pages
+        run: |
+          mkdir _site
+          rsync -a --exclude '.git' --exclude '.github' --exclude '*.php' ./ _site/
+          find _site -name '*.html' -exec sed -i 's#<head>#<head>\n<meta name="robots" content="noindex, nofollow">#' {} +
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

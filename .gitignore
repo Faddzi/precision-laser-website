@@ -1,0 +1,7 @@
+# Contains SMTP credentials - never commit
+sendmail.php
+
+# Server logs and archives
+error_log
+*.log
+*.zip
