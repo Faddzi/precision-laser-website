@@ -5,3 +5,6 @@ sendmail.php
 error_log
 *.log
 *.zip
+
+# Build tool dependencies
+tools/node_modules/

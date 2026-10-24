@@ -1,0 +1,16 @@
+{
+  "name": "plcs-site-tools",
+  "private": true,
+  "type": "module",
+  "description": "Build tools for the Precision Laser Cutting Solutions website (not part of the published site).",
+  "scripts": {
+    "build": "node build.mjs",
+    "icons": "node subset_icons.mjs"
+  },
+  "dependencies": {
+    "csso": "^5.0.5",
+    "purgecss": "^7.0.2",
+    "subset-font": "^2.4.0",
+    "terser": "^5.36.0"
+  }
+}

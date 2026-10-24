@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      hide_from_search:
+        description: "Add noindex + block crawlers on this staging copy"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -23,12 +28,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Keep the staging copy out of search results so it never competes
-      # with the live site. The source files stay untouched.
-      - name: Add noindex to staging pages
+      # Publish only what the website itself needs (no build tools, sources, legacy files or PHP).
+      # Every page has a <link rel="canonical"> pointing at the live domain, so this copy defers to it.
+      - name: Assemble site
         run: |
           mkdir _site
-          rsync -a --exclude '.git' --exclude '.github' --exclude '*.php' ./ _site/
+          rsync -a --exclude '.git' --exclude '.github' --exclude 'tools' --exclude 'src' --exclude '_legacy' --exclude '*.php' ./ _site/
+
+      # Optional: run the workflow manually with "hide_from_search" ticked to keep this copy out of Google.
+      - name: Hide staging from search engines
+        if: ${{ github.event.inputs.hide_from_search == 'true' }}
+        run: |
           find _site -name '*.html' -exec sed -i 's#<head>#<head>\n<meta name="robots" content="noindex, nofollow">#' {} +
           printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
 
