@@ -305,3 +305,10 @@ body :is(h1, h2, h3):where(.seo-h){
 .accordion-style2 .tab-tag,.accordion-style2 .tab-tag.font-color-red{color:#ff5a66}
 .bg-black-opacity-light .text-deep-pink{color:#ff7b96}
 footer .footer-bottom a{color:#c0cbd3;text-decoration:underline}
+
+.plcs-copy{position:relative;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;margin:-6px 0 -6px 6px;padding:0;vertical-align:middle;border:0;border-radius:6px;background:transparent;color:#aab6c0;cursor:pointer;transition:background .2s,color .2s}
+.plcs-copy:hover,.plcs-copy:focus-visible{background:rgba(255,255,255,.12);color:#fff}
+.plcs-copy .ic-ok,.plcs-copy.is-copied .ic-copy{display:none}
+.plcs-copy.is-copied .ic-ok{display:block;color:#4ade80}
+.plcs-copy .plcs-copied{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:2px;padding:2px 8px;border-radius:4px;background:#0d7a3f;color:#fff;font-size:11px;line-height:16px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.plcs-copy.is-copied .plcs-copied{opacity:1}

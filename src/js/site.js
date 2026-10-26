@@ -312,4 +312,21 @@
       if (Math.abs(dx) > 50) show(pos + (dx < 0 ? 1 : -1));
     }, { passive: true });
   })();
+
+  // Copy-to-clipboard buttons (footer e-mail)
+  (function () {
+    $$('.plcs-copy').forEach(function (b) {
+      on(b, 'click', function () {
+        var text = b.getAttribute('data-copy'), done = function () {
+          b.classList.add('is-copied'); b.setAttribute('aria-label', 'Copied');
+          setTimeout(function () { b.classList.remove('is-copied'); b.setAttribute('aria-label', 'Copy email address'); }, 1800);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
+        else {
+          var t = d.createElement('textarea'); t.value = text; t.style.position = 'fixed'; t.style.opacity = '0';
+          d.body.appendChild(t); t.select(); try { d.execCommand('copy'); done(); } catch (e) {} d.body.removeChild(t);
+        }
+      });
+    });
+  })();
 })();
