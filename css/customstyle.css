@@ -221,26 +221,20 @@ color:#fff;
 	text-align:center;
 	color:#e20615;
 }
-.plcs-footer-contact .fa-whatsapp{
-	color:#25d366;
-	font-size:17px;
-	margin-top:4px;
-}
-.plcs-footer .plcs-wa-tag{
-	display:inline-block;
-	margin-left:6px;
-	padding:0 8px;
-	border-radius:10px;
-	font-size:11px;
-	line-height:18px;
-	vertical-align:1px;
-	color:#fff;
-	background:#0d7a3f;
-}
-.plcs-footer .plcs-wa-tag:hover{
-	color:#fff;
-	background:#0a6633;
-}
+.plcs-footer .plcs-phone{display:block}
+.plcs-footer .plcs-phone-num{display:block;font-weight:600;letter-spacing:.3px;margin-bottom:8px}
+.plcs-cta{display:flex;flex-wrap:wrap;gap:8px}
+.plcs-cta-center{justify-content:center;margin-top:12px}
+.plcs-footer-contact .plcs-btn i{flex:none;margin:0;color:#fff;font-size:13px}
+.plcs-btn{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;border-radius:20px;font-size:13px;font-weight:600;line-height:20px;color:#fff;transition:background .2s,transform .2s}
+.plcs-btn i{color:#fff}
+.plcs-btn:hover{color:#fff;transform:translateY(-1px)}
+.plcs-btn-call{background:#c4051a}
+.plcs-btn-call:hover{background:#a50416}
+.plcs-btn-wa{background:#0d7a3f}
+.plcs-btn-wa:hover{background:#0a6633}
+.plcs-phone-num{font-size:18px}
+.plcs-footer .plcs-phone-num{font-size:16px}
 footer .footer-bottom{
 	font-size:13px;
 	color:#8696a2;
