@@ -312,3 +312,12 @@ footer .footer-bottom a{color:#c0cbd3;text-decoration:underline}
 .plcs-copy.is-copied .ic-ok{display:block;color:#4ade80}
 .plcs-copy .plcs-copied{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:2px;padding:2px 8px;border-radius:4px;background:#0d7a3f;color:#fff;font-size:11px;line-height:16px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
 .plcs-copy.is-copied .plcs-copied{opacity:1}
+.plcs-footer-contact .plcs-mail{display:flex;align-items:center;flex-wrap:nowrap;min-width:0}
+.plcs-footer-contact .plcs-mail a{min-width:0;overflow-wrap:anywhere}
+.plcs-footer-contact .plcs-mail .plcs-copy{flex:none;margin:-6px 0 -6px 2px}
+@media only screen and (max-width:400px){.plcs-footer-contact .plcs-mail a{font-size:15px}}
+@media only screen and (min-width:992px) and (max-width:1199px){
+.plcs-footer .row>.col-lg-4{flex:0 0 25%!important;max-width:25%!important}
+.plcs-footer .row>.col-lg-3:last-child{flex:0 0 33.3333%!important;max-width:33.3333%!important}
+.plcs-footer .row>.col-lg-3:not(:last-child){flex:0 0 25%!important;max-width:25%!important}
+}
